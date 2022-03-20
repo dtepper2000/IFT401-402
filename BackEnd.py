@@ -1,4 +1,4 @@
-import requests
+import requests # requires pip install requests
 from urllib.parse import urlencode
 #import sqlite3
 
