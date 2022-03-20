@@ -1,21 +1,33 @@
+#!/usr/bin/env python
+# 
+#   File: Sql_for_BackEnd.py
+#   Author: Ian Brown (ijbrown@asu.edu)
+#   Date: 2022.03.19
+#   Description: The "SQL" portion of the "Back-End" Programming for p51 (IFT402)
+#   Notes:  1. [TO-DO] This works on my local machine, needs to be refactored for Azure SQL DB
+#           2. [TO-DO] Will need to figure out how to manage "PIP INSTALL" requirements in an Azure Web Server
+#           3. [TO-DO] Can we access "System DSN" (ie. Registry Key info) on Azure instance? If so, feed it to the "ENGINE"
+#           4. [Reference] ODBC Driver info can be found in ODBC Data Source Admin (tool) > "Drivers" tab (if needed for different engine/connection type)
+#           5. [Reference] ODBC DSN can be found at: HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBC.INI\ODBC Data Sources
+#           6. [Reference] Documentation to figure out how to connect Azure DB to the "ENGINE"
+#               https://docs.sqlalchemy.org/en/14/dialects/mssql.html#:~:text=degrades%20performance%20significantly.-,PyODBC,-%C2%B6
+#
+########################################################################################
 
-import pypyodbc # requires pip install pypyodbc - connects Python to SQL
+#these imports might require pip install
+import pypyodbc # connects Python to SQL
 import pyodbc
-import pandas as pd # requires pip install pandas - helps parse SQL data
+import pandas as pd # helps put SQL data into "data frames"
 import sqlalchemy
 from sqlalchemy import create_engine
 
-
+####### this is an optional engine connection for pyODBC that can leverage variable input, if needed #####
 #USR = 'p51_SqlJob'
 #PWD = 'p51_program_pwd_51'
 #Sys_DSN = 'Capstone'
 #engine = create_engine("mssql+pyodbc://{USR}:{PWD}@{Sys_DSN}")
-# ^ Note: System DSN info can be found at HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBC.INI\ODBC Data Sources
 
 engine = create_engine("mssql+pyodbc://p51_SqlJob:p51_program_pwd_51@Capstone")
-
-
-
 connection = engine.connect()
 
 data = pd.read_sql_query("""
