@@ -1,0 +1,57 @@
+P51 Azure Infrastructure
+
+Create an MS Azure Account. Unfortunately an educational free account will not allow us to create a new AD/SQL Server and WebApp. I had to create a new account, with $200 credit and pay as you go features (after the credit).
+
+Log into Azure portal (portal.azure.com) to verify that account exists and can create all objects needed for Progetto Cinquantuno. We need:
+	AD to manage servers/apps and to create SQL Server and Webapp
+
+Active Directory
+Create and Deploy Active Directory within Azure. 
+	Create new resource group: Project51
+	Primary Domain: NETORGFT8245949.onmicrosoft.com THIS IS ONLY FOR LOGGING IN
+	Region: East US
+	Domain Admin Name: Projectadmin
+	Domain Admin Password: Progettoadmin!!
+	Choose AD Version: Server 2019
+	Domain/Forest Name: NETORGFT8245949.onmicrosoft.com
+	Using two DC Vm's
+	Create new AD-vnet as virtual network
+	Create new DC Subnet 
+
+	Ian Brown's Password:  Progetto51!! Made you a member of DCAdmin group
+	Ibrown@NETORGFT8245949.onmicrosoft.com
+	Cjunior@NETORGFT8245949.onmicrosoft.com
+	dtepper@NETORGFT8245949.onmicrosoft.com
+	Progetto51!!
+
+Add public IP Address to AD infrastructure
+
+
+Create SQL Server
+	sql admin = p51admin 	pword = Progetto51!!
+
+	To connect to the SQL Server we are using proxy to
+	East US	40.121.158.30, 40.79.153.12, 40.78.225.32	20.42.65.64/29, 20.42.73.0/29, 52.168.116.64/29
+
+I added all of our client IP Addresses in order to connect to the SQL Server and database within the firewall rules.
+
+The server name to connect to is: project51.database.windows.net via sql server management studio
+
+Create Webapp + Database (New experience) within Azure portal
+
+Webapp details: 
+	Name: project51.azurewebsites.net
+	runtime stack: Java 11
+	Java web server stack: Java SE (Embedded Web Server)
+
+	Dabase Engine: SQLAzure
+	Server Name: project51-server
+	database name: p51
+
+For the database: 
+	username: project51-server-admin
+	password: T2Y3Q327KP05W34D$
+
+	connection to the web app database:
+	Data Source=tcp:project51-server.database.windows.net,1433;Initial Catalog=p51;User Id=project51-server-admin@project51-server.database.windows.net;Password=T2Y3Q327KP05W34D$
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us - P51</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+</head>
+
+<body>
+
+        <header>
+        <h1></h1>
+        <nav>
+            <div class="logo"> 
+            </div>
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="API.html">API</a></li>
+            <li><a href="login.html">Log in</a></li>
+        </ul>
+        </nav>
+    </header>
+        <div class="container">
+           
+            <div class="contact-box">
+                <div class="left"></div>
+                <div class="right">
+                    <form action="https://formsubmit.co/progettocinquantuno@gmail.com" method="POST">
+                        <h2>Contact Us</h2>
+                        <input type="hidden" name="_subject" value="New Contact Form!">
+                        <input type="text" name="name" required class="field" placeholder="Name">
+                        <input type="email" name="email" required class="field" placeholder="Email">
+                        <input type="text" name="phone" class="field" placeholder="Phone">
+                        <textarea name="message" placeholder="Message" class="field"></textarea>
+                        <input type="hidden" name="_next" value="http://127.0.0.1:5500/P51/Thanks.html">
+                        <button type="submit" class="submit">Send</button>
+                        <input type="hidden" name="_captcha" value="false">
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
