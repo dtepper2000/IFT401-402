@@ -1,0 +1,12 @@
+<Query>
+    <FrontEnd>
+        <UserQuery></UserQuery>
+    </FrontEnd>
+
+    <BackEnd>
+		<Results>
+		</Results>
+		<Events>
+		</Events>
+    </BackEnd>
+</Query>
