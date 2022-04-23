@@ -28,7 +28,7 @@ jobs:
           ###### Repository/Build Configurations ######
           app_location: "public" # App source code path relative to repository root
           api_location: "api" # Api source code path relative to repository root - optional
-          output_location: "" # Built app content directory, relative to app_location - optional
+          output_location: "wwwroot" # Built app content directory, relative to app_location - optional
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
