@@ -1,0 +1,441 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap");
+
+body {
+  background-color: rgb(61, 61, 61);
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  padding: 0;
+  color: white;
+  background-color: rgb(61, 61, 61);
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: #ffffff;
+}
+
+nav {
+  width: 100%;
+  height: 75px;
+  background-color: #000000;
+  /* line-height: 75px; */
+  /* padding: 0px 100px; */
+  /* position: fixed; */
+  /* z-index: 1; */
+  display: flex;
+  align-items: center;
+}
+
+nav .logo{
+  width: 50%;
+  margin-top: 6px;
+}
+
+nav .logo img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* nav .logo p {
+  float: center;
+  color: #fff;
+  text-transform: uppercase;
+} */
+
+nav ul {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  width: 50%;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 0px 32px;
+}
+
+nav ul li a:hover {
+  color: #474747;
+}
+
+nav ul li .active {
+  color: #ffffff;
+}
+
+.title {
+  padding: 20px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.left-box {
+  width: 90%;
+  height: 100%;
+  text-align: center;
+}
+
+.left-box .box {
+  border: none;
+  padding: 40px 25px;
+  box-shadow: 1px 1px 11px 1px #1f1e1e;
+  width: 75%;
+  height: auto;
+  justify-content: center;
+  margin-left: 13%;
+}
+
+.left-box .box h3 {
+  color: #dad8d8;
+  font-size: 50px;
+}
+
+.left-box .box h3 span {
+  color: green;
+}
+
+.left-box .box .text-1 {
+  text-align: left;
+  color: green;
+  font-size: 19px;
+  font-weight: 500;
+  padding-top: 15px;
+}
+
+.left-box .box .text-2 {
+  text-align: left;
+  color: red;
+  font-size: 19px;
+  font-weight: 500;
+  padding-top: 15px;
+}
+
+.left-box .box .text-3 {
+  text-align: left;
+  color: yellow;
+  font-size: 19px;
+  font-weight: 500;
+  padding-top: 15px;
+}
+
+.container {
+  min-height: 150vh;
+  /* padding: 5%; */
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.horizon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  position: relative !important;
+}
+
+.subbtn {
+  position: relative;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  font-size: 18px;
+  display: inline-block;
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.subbtn:hover {
+  letter-spacing: 4px;
+}
+
+#popup {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: #fff;
+  width: 450px;
+  padding: 80px 50px 50px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  transition: 0.5s;
+  visibility: hidden;
+}
+
+#popup.active {
+  visibility: visible;
+  top: 50%;
+}
+
+#popup .content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#popup .content img {
+  max-width: 80px;
+}
+
+#popup .content h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000000;
+  margin: 20px 0 10px;
+}
+
+#popup .content .inputbox {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#popup .content .inputbox input {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  outline: none;
+  font-size: 18px;
+}
+
+#popup .content .inputbox input[type="submit"] {
+  background: rgb(61, 61, 61);
+  color: #fff;
+  border: none;
+}
+
+.close {
+  position: absolute;
+  top: -70px;
+  right: -40px;
+  cursor: pointer;
+}
+
+/* Set the size of the div element that contains the map */
+#map {
+  height: 600px;
+  /* The height is 400 pixels */
+  width: 600px;
+  /* The width is the width of the web page */
+}
+
+#map_canvas {
+  height: 500px;
+  width: 500px;
+}
+
+.align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.helicopter {
+  background-color: white;
+}
+
+input:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+input:hover {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.hero-image {
+  height: 175px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.set-bkgnd {
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+p {
+  font-size: 1em;
+}
+
+.nearbyHeading {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.radioOpts-row {
+  margin-left: 3em;
+}
+
+.mapFunctions {
+  padding: 2em;
+}
+
+div #mymap {
+  width: 100%;
+  min-height: 350px;
+}
+
+.options-group {
+  margin-top: 5px;
+}
+
+#optsHeader {
+  margin-left: 2em;
+}
+
+.searchStyle {
+  border-color: black;
+  border-width: thin;
+  border-style: double;
+}
+
+.searchResults {
+  padding-top: 10px;
+}
+
+#resultsTable {
+  display: block;
+  width: 100%;
+  height: 300px;
+  overflow-y: scroll;
+}
+
+/* TABLE */
+#listing {
+  display: none;
+}
+
+thead {
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: #f8f5f0;
+}
+
+#footer {
+  height: 3em;
+  font-size: smaller;
+  text-align: right;
+  padding-right: 15px;
+}
+
+/* INFO WINDOW */
+.placeIcon {
+  width: 20px;
+  height: 34px;
+  margin: 4px;
+}
+
+.hotelIcon {
+  width: 24px;
+  height: 24px;
+}
+
+#rating {
+  font-size: 13px;
+  font-family: Arial Unicode MS;
+}
+
+.iw_table_row {
+  height: 18px;
+}
+
+.iw_attribute_name {
+  font-weight: bold;
+  text-align: right;
+}
+
+.iw_table_icon {
+  text-align: right;
+}
+
+/*  MEDIA QUERIES */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .options-group {
+    margin-top: 10px;
+  }
+
+  #search-btn {
+    margin-top: -4px;
+  }
+
+  .searchResults {
+    padding-top: 2px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .hero-image {
+    height: 263px;
+  }
+
+  div #mymap {
+    width: 700px;
+    height: 500px;
+  }
+
+  #resultsTable {
+    height: 500px;
+  }
+}
